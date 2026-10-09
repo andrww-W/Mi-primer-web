@@ -1,0 +1,571 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Desarrollo Web - Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estiloPP.css">
+    
+</head>
+<!-- Agregamos ScrollSpy al body apuntando al navbar -->
+<body data-bs-spy="scroll" data-bs-target="#navbar-main" data-bs-offset="100" tabindex="0">
+
+    <nav id="navbar-main" class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">GuíaWeb</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto nav-pills">
+                    <li class="nav-item"><a class="nav-link" href="#semantica">1. Semántica</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#texto">2. Texto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#listas">3. Listas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tablas">4. Tablas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#multimedia">5. Multimedia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formularios">6. Formularios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#css">7. CSS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#javascript">8. JS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white py-5 mb-5 text-center shadow">
+        <div class="container py-4">
+            <h1 class="display-4 fw-bold">Desarrollo Web con Bootstrap 5</h1>
+            <p class="lead fw-light">Domina HTML, CSS y JavaScript utilizando el framework más popular del mundo.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+    <!-- Contenedor Principal (Tarjeta gigante con sombra) -->
+    <main class="container main-container mb-5">
+
+        <section id="teoria">
+            <h2 class="text-primary border-bottom border-primary border-3 pb-2 mb-4">¿Qué es y cómo funciona una Página Web?</h2>
+            
+            <p class="lead text-secondary">
+                Una página web no es magia; es un conjunto de archivos de texto que tu navegador (Chrome, Safari, Edge) sabe cómo interpretar y dibujar en la pantalla.
+            </p>
+
+            <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm bg-light">
+                        <div class="card-body">
+                            <h4 class="card-title text-dark">La Arquitectura: Frontend y Backend</h4>
+                            <hr>
+                            <p><strong>🎨 Frontend (Lado del Cliente):</strong> Es todo lo que ves y tocas. Se construye con:</p>
+                            <ul>
+                                <li><strong>HTML:</strong> El esqueleto y contenido (textos, imágenes).</li>
+                                <li><strong>CSS:</strong> La ropa y maquillaje (colores, diseño, Bootstrap).</li>
+                                <li><strong>JavaScript:</strong> El cerebro y los músculos (animaciones, clics, lógica en el navegador).</li>
+                            </ul>
+                            <p class="mt-3"><strong>⚙️ Backend (Lado del Servidor):</strong> Lo que ocurre tras bambalinas. Involucra bases de datos (donde se guardan tus usuarios y contraseñas) y lenguajes de servidor (PHP, Python, Node.js) que procesan la información antes de enviarla a tu pantalla.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm bg-light">
+                        <div class="card-body">
+                            <h4 class="card-title text-dark">DNS, Dominios y Hosting</h4>
+                            <hr>
+                            <p>Para que una web exista en internet, necesita infraestructura:</p>
+                            <ul class="list-group list-group-flush border-0">
+                                <li class="list-group-item bg-transparent">
+                                    <strong>El Dominio:</strong> Es el nombre (ej. <code>google.com</code>). Es como la dirección de tu casa.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <strong>El Hosting:</strong> Es el servidor físico (una computadora muy potente) encendido 24/7 donde se guardan tus archivos HTML y fotos. Es como el terreno donde construyes tu casa.
+                                </li>
+                                <li class="list-group-item bg-transparent">
+                                    <strong>DNS (Domain Name System):</strong> Los servidores en internet no entienden letras, entienden direcciones IP (ej. <code>192.168.1.1</code>). El DNS es el directorio telefónico que traduce "google.com" a esos números mágicos para que tu navegador sepa a qué servidor conectarse.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-xl shadow-md p-8 mb-10">
+            <h2 class="text-3xl font-semibold text-blue-700 border-b-2 border-blue-200 pb-3 mb-6">Dominios, Hosting y Navegadores</h2>
+            <div class="space-y-6 text-gray-700 text-lg">
+                <p>
+                    Para que una página web exista en internet y pueda ser visitada por cualquiera, necesita tres componentes fundamentales adicionales a su código:
+                </p>
+                <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+                    <h4 class="font-bold text-xl text-blue-800 mb-2">1. El Dominio</h4>
+                    <p>Es la dirección fácil de recordar que los usuarios escriben en el navegador (ejemplo: <code>www.google.com</code>). Traduce las complejas direcciones IP numéricas en palabras legibles.</p>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                    <h4 class="font-bold text-xl text-indigo-800 mb-2">2. El Hosting (Alojamiento)</h4>
+                    <p>Es el espacio físico en un servidor (una computadora especial conectada a internet 24/7) donde se guardan todos los archivos, imágenes y bases de datos que componen la página web.</p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-lg border border-purple-100">
+                    <h4 class="font-bold text-xl text-purple-800 mb-2">3. El Navegador Web</h4>
+                    <p>Es el software que interpreta el código (HTML, CSS, JS) almacenado en el hosting y lo muestra gráficamente. Ejemplos populares son Google Chrome, Mozilla Firefox, Safari y Microsoft Edge.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 1. Semántica -->
+        <section id="semantica">
+            <h2 class="text-primary mb-4 border-bottom pb-2">1. Semántica HTML5</h2>
+            <div class="card shadow-sm border-0">
+                <div class="card-body row align-items-center">
+                    <div class="col-md-6">
+                        <p>La semántica web mejora el SEO y la accesibilidad usando etiquetas con significado específico en lugar de simples <code>&lt;div&gt;</code>.</p>
+                        <table class="table table-sm table-hover mt-3">
+                            <thead class="table-light">
+                                <tr><th>Etiqueta</th><th>Uso Principal</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>&lt;header&gt;</code></td><td>Cabecera del sitio.</td></tr>
+                                <tr><td><code>&lt;nav&gt;</code></td><td>Menú de navegación.</td></tr>
+                                <tr><td><code>&lt;main&gt;</code></td><td>Contenido central.</td></tr>
+                                <tr><td><code>&lt;article&gt;</code></td><td>Post o noticia independiente.</td></tr>
+                                <tr><td><code>&lt;footer&gt;</code></td><td>Pie de página.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="p-3 border border-2 border-primary rounded bg-light fw-bold text-primary mb-2">&lt;header&gt;</div>
+                        <div class="d-flex gap-2 mb-2" style="height: 120px;">
+                            <div class="p-3 border border-2 border-success rounded bg-light text-success w-75 d-flex align-items-center justify-content-center">&lt;main&gt;</div>
+                            <div class="p-3 border border-2 border-warning rounded bg-light text-warning w-25 d-flex align-items-center justify-content-center">&lt;aside&gt;</div>
+                        </div>
+                        <div class="p-3 border border-2 border-secondary rounded bg-light fw-bold text-secondary">&lt;footer&gt;</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Párrafos y texto -->
+        <section id="texto">
+            <h2 class="text-primary mb-4 border-bottom pb-2">2. Párrafos, Textos e Imágenes</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-dark text-white">Formato de Texto</div>
+                        <div class="card-body">
+                            <h1>Título &lt;h1&gt;</h1>
+                            <h2>Subtítulo &lt;h2&gt;</h2>
+                            <p>Este es un párrafo básico usando <code>&lt;p&gt;</code>. Puedes usar la etiqueta <code>&lt;b&gt;</code> o <code>&lt;strong&gt;</code> para texto en <strong>negritas</strong>, y la etiqueta <code>&lt;i&gt;</code> o <code>&lt;em&gt;</code> para <em>cursivas</em>.</p>
+                            <div class="alert alert-info">
+                                <strong>Enlaces:</strong> <br>
+                                <a href="https://getbootstrap.com" target="_blank" class="btn btn-outline-primary btn-sm mt-2">Visitar Bootstrap &lt;a&gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-dark text-white">Imágenes &lt;img&gt;</div>
+                        <div class="card-body text-center">
+                            <p>La etiqueta de imagen es autocontenida y usa los atributos <code>src</code> (origen) y <code>alt</code> (texto alternativo).</p>
+                            <img src="https://placehold.co/400x200/0d6efd/ffffff?text=Imagen+Responsiva" alt="Imagen de ejemplo" class="img-fluid rounded shadow-sm">
+                            <div class="code-box mt-3 text-start">
+&lt;img src="ruta.jpg" class="img-fluid" alt="Ejemplo"&gt;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Listas -->
+        <section id="listas">
+            <h2 class="text-primary mb-4 border-bottom pb-2">3. Tipos de Listas</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100 bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">Desordenadas &lt;ul&gt;</h5>
+                            <p class="text-muted small">Usan viñetas.</p>
+                            <ul>
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100 bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">Ordenadas &lt;ol&gt;</h5>
+                            <p class="text-muted small">Tienen secuencia lógica.</p>
+                            <ol>
+                                <li>Pensar la idea</li>
+                                <li>Escribir el código</li>
+                                <li>Publicar en internet</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100 bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Definición &lt;dl&gt;</h5>
+                            <p class="text-muted small">Término y descripción.</p>
+                            <dl>
+                                <dt>Bootstrap</dt>
+                                <dd>Framework CSS para UI.</dd>
+                                <dt>DOM</dt>
+                                <dd>Estructura de la página web.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Tablas -->
+        <section id="tablas">
+            <h2 class="text-primary mb-4 border-bottom pb-2">4. Tablas de Datos</h2>
+            <div class="card shadow-sm border-0 p-4">
+                <p>Las tablas en Bootstrap se mejoran automáticamente añadiendo clases como <code>.table-striped</code>, <code>.table-bordered</code> y <code>.table-hover</code>.</p>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover text-center align-middle">
+    <tr>
+        <th>HORAS</th>
+        <th>LUNES</th>
+        <th>MARTES</th>
+        <th>MIÉRCOLES</th>
+        <th>JUEVES</th>
+        <th>VIERNES</th>
+    </tr>
+
+    <tr>
+        <td>7-8</td>
+        <td rowspan="2">APLICACIONES DEL<br>PENSAMIENTO MATEMÁTICO</td>
+        <td rowspan="2">LA ENERGÍA EN LOS<br>PROCESOS DE LA VIDA DIARIA</td>
+        <td></td>
+        <td rowspan="2">LA ENERGÍA EN LOS<br>PROCESOS DE LA VIDA DIARIA</td>
+        <td>ÁMBITO DE FORMACIÓN<br>SOCIOEMOCIONAL VI</td>
+    </tr>
+
+    <tr>
+        <td>8-9</td>
+        <td rowspan="2">IMPLEMENTA<br>APLICACIONES WEB</td>
+        <td>CONSTRUYE<br>APLICACIONES WEB</td>
+    </tr>
+
+    <tr>
+        <td>9-10</td>
+        <td>TEMAS SELECTOS<br>DE MATEMÁTICAS II</td>
+        <td>CONCIENCIA HISTÓRICA II</td>
+        <td>CONCIENCIA HISTÓRICA II</td>
+        <td rowspan="2">CONSTRUYE<br>APLICACIONES WEB</td>
+    </tr>
+
+    <tr>
+        <td>10-11</td>
+        <td rowspan="2">CONSTRUYE<br>APLICACIONES WEB</td>
+        <td>IMPLEMENTA<br>APLICACIONES WEB</td>
+        <td rowspan="2">INGLÉS V</td>
+        <td>APLICACIONES DEL<br>PENSAMIENTO MATEMÁTICO</td>
+    </tr>
+
+    <tr>
+        <td>11-12</td>
+        <td rowspan="2">CONSTRUYE<br>APLICACIONES WEB</td>
+        <td>APLICACIONES DEL<br>PENSAMIENTO MATEMÁTICO</td>
+        <td>IMPLEMENTA<br>APLICACIONES WEB</td>
+    </tr>
+
+    <tr>
+        <td>12-13</td>
+        <td rowspan="2">INGLÉS V</td>
+        <td>TEMAS SELECTOS<br>DE MATEMÁTICAS II</td>
+        <td>ÁMBITO DE FORMACIÓN<br>SOCIOEMOCIONAL VI</td>
+        <td rowspan="2">TEMAS SELECTOS<br>DE MATEMÁTICAS II</td>
+    </tr>
+
+    <tr>
+        <td>13-14</td>
+        <td></td>
+        <td>INGLÉS V</td>
+        <td></td>
+    </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Multimedia -->
+        <section id="multimedia">
+            <h2 class="text-primary mb-4 border-bottom pb-2">5. Multimedia</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body text-center">
+                            <h4 class="card-title mb-3">Video <code>&lt;video&gt;</code></h4>
+                            <p class="text-muted small">Usamos la clase <code>w-100</code> para hacerlo responsivo.</p>
+                            <video controls class="w-100 rounded shadow-sm border border-secondary" poster="https://placehold.co/600x400/212529/ffffff?text=Video+HTML5">
+                                <source src="perroumcgregor.mp4" type="video/mp4" >
+                                Tu navegador no soporta el video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
+                            <h4 class="card-title mb-3">Audio <code>&lt;audio&gt;</code></h4>
+                            <p class="text-muted small">Controles nativos sin plugins extra.</p>
+                            <div class="bg-light p-4 rounded w-100 d-flex flex-column align-items-center shadow-sm">
+                                <span class="fs-1 mb-3">🎧</span>
+                                <audio controls>
+                                <source src="perrotonto.mp3" type="audio/mpeg">
+                                Tu navegador no soporta el elemento de audio.
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Formularios -->
+        <section id="formularios">
+            <h2 class="text-primary mb-4 border-bottom pb-2">6. Formularios</h2>
+            <div class="row g-4">
+                <div class="col-md-5">
+                    <div class="card shadow-sm border-0 h-100 bg-dark text-white">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">Tipos de Input</h5>
+                            <table class="table table-dark table-sm mt-3">
+                                <tbody>
+                                    <tr><td><code>type="text"</code></td><td>Texto libre</td></tr>
+                                    <tr><td><code>type="email"</code></td><td>Valida correos</td></tr>
+                                    <tr><td><code>type="password"</code></td><td>Oculta caracteres</td></tr>
+                                    <tr><td><code>type="number"</code></td><td>Solo números</td></tr>
+                                    <tr><td><code>type="checkbox"</code></td><td>Casilla verificación</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card shadow-sm border-0 h-100">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Ejemplo Formulario (con form-control)</h5>
+                            <form onsubmit="simularEnvio(event)">
+                                <div class="mb-3">
+                                    <label for="inputEmail" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="nombre@ejemplo.com" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputMensaje" class="form-label">Mensaje</label>
+                                    <textarea class="form-control" id="inputMensaje" rows="3" required></textarea>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="checkTerminos" required>
+                                    <label class="form-check-label" for="checkTerminos">Acepto los términos</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Enviar Formulario</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CSS -->
+        <section id="css">
+            <div class="card shadow border-primary border-top border-4">
+                <div class="card-body p-5">
+                    <h2 class="text-primary mb-4">7. CSS (Cascading Style Sheets)</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p>CSS es responsable del diseño visual. Modifica colores, márgenes, fuentes y más.</p>
+                            <p><strong>Clases utilizadas aquí (vía Bootstrap):</strong></p>
+                            <ul>
+                                <li><code>bg-danger</code>: Fondo rojo</li>
+                                <li><code>rounded-circle</code>: Bordes redondos (círculo)</li>
+                                <li><code>shadow-lg</code>: Sombra grande</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 text-center d-flex flex-column align-items-center">
+                            <div id="cssTarget" class="demo-box bg-secondary text-white rounded mb-4 shadow">
+                                ¡Pruébame!
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-outline-danger" onclick="aplicarEstilos('bg-danger text-white rounded-circle shadow-lg')">Círculo Rojo</button>
+                                <button type="button" class="btn btn-outline-success" onclick="aplicarEstilos('bg-success text-dark rounded-0 border border-dark border-5')">Cuadro Bordeado</button>
+                                <button type="button" class="btn btn-dark" onclick="aplicarEstilos('bg-secondary text-white rounded shadow')">Resetear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. JavaScript -->
+        <section id="javascript">
+            <h2 class="text-primary mb-4 border-bottom pb-2">8. JavaScript (Dinámico)</h2>
+            <div class="card shadow-sm border-0 p-4" id="jsContainer">
+                <p class="lead">JS es el cerebro. Permite manejar eventos, manipular el DOM y crear cuadros de diálogo interactivos.</p>
+                <div class="row g-3 mt-3 text-center">
+                    <div class="col-md-4">
+                        <div class="p-4 border rounded bg-light h-100 d-flex flex-column justify-content-center">
+                            <h5 class="mb-3">Mensaje</h5>
+                            <button class="btn btn-info text-white" onclick="mostrarAlertaCustom('¡Bienvenido! Has ejecutado una función en JS sin usar el molesto alert() nativo.')">Saludar</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 border rounded bg-light h-100 d-flex flex-column justify-content-center">
+                            <h5 class="mb-3">Preguntar</h5>
+                            <button class="btn btn-warning" onclick="pedirNombre()">Ingresar Nombre</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 border rounded bg-light h-100 d-flex flex-column justify-content-center">
+                            <h5 class="mb-3">Manipular DOM</h5>
+                            <button id="btnLuz" class="btn btn-dark" onclick="alternarLuz()">Encender Luz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Guía Web. Construido con HTML, JS y <span class="text-primary fw-bold">Bootstrap 5</span>.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE BOOTSTRAP (Reemplazo elegante de alert y prompt) -->
+    <div class="modal fade" id="customDialogModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow-lg border-0">
+                <div class="modal-header bg-primary text-white border-0">
+                    <h5 class="modal-title fw-bold" id="modalTitle">Mensaje</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p id="modalMessage" class="fs-5 mb-0"></p>
+                    <div id="modalInputContainer" class="mt-3 d-none">
+                        <input type="text" id="modalInput" class="form-control form-control-lg" placeholder="Escribe aquí...">
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-light" id="btnModalCancel" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary px-4" id="btnModalConfirm">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Logic -->
+    <script>
+        // === LÓGICA DEL MODAL PERSONALIZADO (Evitando alert/prompt) ===
+        const modalElement = document.getElementById('customDialogModal');
+        const modalInstance = new bootstrap.Modal(modalElement);
+        
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const modalInputContainer = document.getElementById('modalInputContainer');
+        const modalInput = document.getElementById('modalInput');
+        const btnModalConfirm = document.getElementById('btnModalConfirm');
+        const btnModalCancel = document.getElementById('btnModalCancel');
+
+        // Función para simular 'alert()'
+        function mostrarAlertaCustom(mensaje, titulo = 'Información', tipo = 'primary') {
+            modalTitle.textContent = titulo;
+            modalMessage.textContent = mensaje;
+            modalInputContainer.classList.add('d-none');
+            btnModalCancel.classList.add('d-none'); // Ocultar cancelar en alertas simples
+            
+            // Ajustar colores del header
+            document.querySelector('.modal-header').className = `modal-header bg-${tipo} text-white border-0`;
+            btnModalConfirm.className = `btn btn-${tipo} px-4`;
+
+            btnModalConfirm.onclick = () => modalInstance.hide();
+            modalInstance.show();
+        }
+
+        // Función para simular 'prompt()'
+        function mostrarPromptCustom(mensaje, callback) {
+            modalTitle.textContent = 'Pregunta';
+            modalMessage.textContent = mensaje;
+            
+            modalInputContainer.classList.remove('d-none');
+            btnModalCancel.classList.remove('d-none');
+            modalInput.value = ''; // Limpiar input
+            
+            document.querySelector('.modal-header').className = 'modal-header bg-warning text-dark border-0';
+            btnModalConfirm.className = 'btn btn-warning px-4';
+
+            // Al hacer clic en confirmar, enviamos el valor al callback
+            btnModalConfirm.onclick = () => {
+                const valor = modalInput.value.trim();
+                modalInstance.hide();
+                if(callback) callback(valor);
+            };
+
+            // Asegurar que el input se enfoque cuando se abra el modal
+            modalElement.addEventListener('shown.bs.modal', function focusInput() {
+                modalInput.focus();
+                modalElement.removeEventListener('shown.bs.modal', focusInput);
+            });
+
+            modalInstance.show();
+        }
+
+        // === FUNCIONES CONECTADAS A LA UI ===
+
+        // Formulario
+        function simularEnvio(e) {
+            e.preventDefault();
+            const email = document.getElementById('inputEmail').value;
+            mostrarAlertaCustom(`El formulario de ${email} fue interceptado y procesado exitosamente mediante JS.`, '¡Éxito!', 'success');
+        }
+
+        // CSS
+        function aplicarEstilos(clases) {
+            const box = document.getElementById('cssTarget');
+            box.className = 'demo-box mb-4 ' + clases; // Mantiene las clases base y añade las nuevas
+        }
+
+        // JS: Prompt
+        function pedirNombre() {
+            mostrarPromptCustom("¿Cuál es tu nombre de desarrollador?", function(nombre) {
+                if(nombre) {
+                    mostrarAlertaCustom(`¡Hola ${nombre}! Así capturamos datos dinámicamente con Bootstrap Modals.`, 'Bienvenido', 'info');
+                }
+            });
+        }
+
+        // JS: DOM (Encender luz)
+        let luzEncendida = false;
+        function alternarLuz() {
+            const container = document.getElementById('jsContainer');
+            const btn = document.getElementById('btnLuz');
+            
+            luzEncendida = !luzEncendida;
+            
+            if (luzEncendida) {
+                container.classList.remove('bg-white');
+                container.classList.add('bg-warning', 'text-dark', 'border-warning');
+                btn.classList.replace('btn-dark', 'btn-light');
+                btn.textContent = 'Apagar Luz';
+            } else {
+                container.classList.remove('bg-warning', 'text-dark', 'border-warning');
+                container.classList.add('bg-white');
+                btn.classList.replace('btn-light', 'btn-dark');
+                btn.textContent = 'Encender Luz';
+            }
+        }
+    </script>
+</body>
+</html>
