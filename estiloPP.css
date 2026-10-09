@@ -1,32 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-body {
-            position: relative; /* Necesario para ScrollSpy */
-            background-color: #f8f9fa;
-        }
-        .code-box {
-            background-color: #212529;
-            color: #f8f9fa;
-            border-radius: 0.375rem;
-            padding: 1rem;
-            font-family: monospace;
-            overflow-x: auto;
-        }
-        .demo-box {
-            transition: all 0.5s ease;
-            width: 150px;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        section {
-            padding-top: 80px; /* Compensa el sticky navbar */
-            margin-top: -40px;
-            margin-bottom: 40px;
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
+/* Estilos propios de GuíaWeb. Bootstrap 5 se carga desde el HTML. */
+
+/* Utilidades visuales usadas en el documento que no pertenecen a Bootstrap */
+.rounded-xl { border-radius: 1rem !important; }
+.shadow-md { box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important; }
+.p-8 { padding: 2rem !important; }
+.mb-10 { margin-bottom: 2.5rem !important; }
+.space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.5rem !important; }
+.text-gray-700 { color: #374151 !important; }
+.text-lg { font-size: 1.125rem !important; line-height: 1.75rem !important; }
+.text-xl { font-size: 1.25rem !important; line-height: 1.75rem !important; }
+.text-3xl { font-size: 1.875rem !important; line-height: 2.25rem !important; }
+.text-blue-700 { color: #1d4ed8 !important; }
+.text-blue-800 { color: #1e40af !important; }
+.bg-blue-50 { background-color: #eff6ff !important; }
+.bg-indigo-50 { background-color: #eef2ff !important; }
+.bg-purple-50 { background-color: #faf5ff !important; }
+.border-blue-100 { border-color: #dbeafe !important; }
+.border-indigo-100 { border-color: #e0e7ff !important; }
+.border-purple-100 { border-color: #f3e8ff !important; }
+.border-blue-200 { border-color: #bfdbfe !important; }
+
+/* Elementos propios de la guía */
+.main-container { min-width: 0; }
+.demo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  min-height: 140px;
+  padding: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: background-color .2s ease, color .2s ease, border-radius .2s ease;
+}
+.code-box {
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: .5rem;
+  background: #f8f9fa;
+  font-family: var(--bs-font-monospace);
+  overflow-wrap: anywhere;
+}
+.semantic-demo-row { height: 120px; }
+
+/* El cambio de DIV a SECTION conserva el comportamiento de bloque. */
+section { min-width: 0; }
